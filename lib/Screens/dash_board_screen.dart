@@ -40,7 +40,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     DashboardModels(
       imgPath: 'https://cdn-icons-png.flaticon.com/512/2641/2641409.png',
       name: 'Fees',
-    )
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -51,18 +51,30 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
           children: [
             CustomPageHeader(),
             Container(
-              height: 400,
+              margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+              height: 460,
               width: double.infinity,
               child: GridView.builder(
                   padding: const EdgeInsets.all(10.0),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: 3 / 2,
+                    childAspectRatio: 2.6 / 2,
                     crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
+                    mainAxisSpacing: 15,
                   ),
+                  itemCount: _studentOptions.length,
                   itemBuilder: (context, index) {
-                    return Card();
+                    return GestureDetector(
+                      child: Card(
+                        child: Column(children: [
+                          Container(
+                            child:
+                                Image.network(_studentOptions[index].imgPath),
+                          ),
+                        ]),
+                      ),
+                      onTap: () {},
+                    );
                   }),
             )
           ],

@@ -39,7 +39,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     ),
     DashboardModels(
       imgPath: 'https://cdn-icons-png.flaticon.com/512/2641/2641409.png',
-      name: 'Fees',
+      name: 'Results',
     ),
   ];
   @override
@@ -68,9 +68,13 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                       child: Card(
                         child: Column(children: [
                           Container(
+                            padding: EdgeInsets.symmetric(vertical: 20),
+                            width: 100,
+                            height: 100,
                             child:
                                 Image.network(_studentOptions[index].imgPath),
                           ),
+                          Text(_studentOptions[index].name),
                         ]),
                       ),
                       onTap: () {},

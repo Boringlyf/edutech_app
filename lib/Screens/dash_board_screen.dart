@@ -4,6 +4,7 @@ import 'package:edutech_app/widgets/custom_page_header.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../main.dart';
+import '../models/dashboard_models.dart';
 import 'login_screen.dart';
 
 class DashBoardScreen extends StatefulWidget {
@@ -15,16 +16,67 @@ class DashBoardScreen extends StatefulWidget {
 }
 
 class _DashBoardScreenState extends State<DashBoardScreen> {
+  List<DashboardModels> _studentOptions = [
+    DashboardModels(
+      imgPath: 'https://cdn-icons-png.flaticon.com/512/595/595990.png',
+      name: 'Announcements',
+    ),
+    DashboardModels(
+      imgPath: 'https://cdn-icons-png.flaticon.com/512/5678/5678058.png',
+      name: "Quiz",
+    ),
+    DashboardModels(
+      imgPath: 'https://cdn-icons-png.flaticon.com/512/4185/4185776.png',
+      name: 'Assignments',
+    ),
+    DashboardModels(
+      imgPath: 'https://cdn-icons-png.flaticon.com/512/1497/1497835.png',
+      name: 'Schedule',
+    ),
+    DashboardModels(
+      imgPath: 'https://cdn-icons-png.flaticon.com/512/1041/1041916.png',
+      name: 'Chat',
+    ),
+    DashboardModels(
+      imgPath: 'https://cdn-icons-png.flaticon.com/512/2641/2641409.png',
+      name: 'Fees',
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
-    final studentDashoptions = Provider.of<DashboardProviders>(context);
-    final studentOptions = studentDashoptions.studentOptions;
     return Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
             CustomPageHeader(),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+              height: 460,
+              width: double.infinity,
+              child: GridView.builder(
+                  padding: const EdgeInsets.all(10.0),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 2.6 / 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 15,
+                  ),
+                  itemCount: _studentOptions.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      child: Card(
+                        child: Column(children: [
+                          Container(
+                            child:
+                                Image.network(_studentOptions[index].imgPath),
+                          ),
+                        ]),
+                      ),
+                      onTap: () {},
+                    );
+                  }),
+            )
           ],
         ),
       ),

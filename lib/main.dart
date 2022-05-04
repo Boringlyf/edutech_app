@@ -1,6 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:edutech_app/Screens/splash_screen.dart';
-import 'package:edutech_app/providers/dash_board_providers.dart';
+import 'package:edutech_app/providers/subjects_provider.dart';
+// import 'package:edutech_app/providers/dash_board_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'Screens/login_screen.dart';
@@ -17,10 +18,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: ((context) => DashboardProviders()))
+        ChangeNotifierProvider(create: (context) => SubjectsProvider())
       ],
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: true,
         title: 'Flutter Demo',
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.blue[200],

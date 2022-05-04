@@ -10,6 +10,9 @@ class SubjectScreens extends StatelessWidget {
       appBar: AppBar(
         title: Text('Subjects Screen'),
       ),
+      body: ListView.builder(
+        itemBuilder: ((context, index) => Card()),
+      ),
     );
   }
 }

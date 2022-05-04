@@ -1,3 +1,7 @@
+import 'package:edutech_app/Screens/result_screen.dart';
+import 'package:edutech_app/Screens/schedule_screen.dart';
+import 'package:edutech_app/Screens/student_assignmentscreen.dart';
+import 'package:edutech_app/Screens/student_chat_screen.dart';
 import 'package:edutech_app/Screens/student_quiz.dart';
 import 'package:edutech_app/Screens/subject_screens.dart';
 import 'package:edutech_app/Screens/view_announcementsscreen.dart';
@@ -60,7 +64,9 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: ((context) => SubjectScreens()),
+                          builder: ((context) => SubjectScreens(
+                                screen: ViewAnnouncementsScreen(),
+                              )),
                         ),
                       );
                     },
@@ -87,7 +93,10 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                            builder: (context) => SubjectScreens()),
+                          builder: (context) => SubjectScreens(
+                            screen: StudentQuizPage(),
+                          ),
+                        ),
                       );
                     },
                   ),
@@ -113,7 +122,9 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: ((context) => SubjectScreens()),
+                          builder: ((context) => SubjectScreens(
+                                screen: StudentAssignmentScreen(),
+                              )),
                         ),
                       );
                     },
@@ -140,7 +151,10 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                            builder: (context) => SubjectScreens()),
+                          builder: (context) => SubjectScreens(
+                            screen: ScheduleScreen(),
+                          ),
+                        ),
                       );
                     },
                   ),
@@ -166,7 +180,10 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                            builder: (context) => SubjectScreens()),
+                          builder: (context) => SubjectScreens(
+                            screen: StudentChatScreen(),
+                          ),
+                        ),
                       );
                     },
                   ),
@@ -192,7 +209,10 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                            builder: (context) => SubjectScreens()),
+                          builder: (context) => SubjectScreens(
+                            screen: ResultScreen(),
+                          ),
+                        ),
                       );
                     },
                   )
@@ -205,32 +225,3 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     );
   }
 }
-
-
-
-// GridView.builder(
-//                   padding: const EdgeInsets.all(10.0),
-//                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-//                     crossAxisCount: 2,
-//                     childAspectRatio: 2.6 / 2,
-//                     crossAxisSpacing: 10,
-//                     mainAxisSpacing: 15,
-//                   ),
-//                   itemCount: _studentOptions.length,
-//                   itemBuilder: (context, index) {
-//                     return GestureDetector(
-//                       child: Card(
-//                         child: Column(children: [
-//                           Container(
-//                             padding: EdgeInsets.symmetric(vertical: 20),
-//                             width: 100,
-//                             height: 100,
-//                             child:
-//                                 Image.network(_studentOptions[index].imgPath),
-//                           ),
-//                           Text(_studentOptions[index].name),
-//                         ]),
-//                       ),
-//                       onTap: () {},
-//                     );
-//                   })

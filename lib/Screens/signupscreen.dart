@@ -1,3 +1,5 @@
+import 'package:app/widgets/logo.dart';
+import 'package:app/widgets/signup_block.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -6,8 +8,8 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
+      body: Column(
+        children: [Logo(), SignUpBlock()],
       ),
     );
   }

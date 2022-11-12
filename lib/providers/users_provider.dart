@@ -7,4 +7,9 @@ class UsersProvider with ChangeNotifier {
   List<UserModel> get users {
     return [..._users]; //returns a copy of the items in _users array
   }
+
+  void addUser(UserModel value) {
+    _users.add(value);
+    notifyListeners();
+  }
 }

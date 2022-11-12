@@ -1,7 +1,10 @@
+import 'package:app/Screens/home_screen.dart';
+import 'package:app/widgets/stringinputfield.dart';
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 
 class SignUpBlock extends StatelessWidget {
-  const SignUpBlock({Key? key}) : super(key: key);
+  SignUpBlock({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +19,43 @@ class SignUpBlock extends StatelessWidget {
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
           ),
-          TextFormField()
+          StringInputField(label: 'Name'),
+          SizedBox(
+            height: 20,
+          ),
+          StringInputField(label: 'Email'),
+          SizedBox(
+            height: 20,
+          ),
+          IntlPhoneField(
+            decoration: InputDecoration(
+              labelText: 'Phone Number',
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+            ),
+            initialCountryCode: 'PK',
+            onChanged: (phone) {
+              print(phone.completeNumber);
+            },
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            children: [
+              SizedBox(
+                width: 250,
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                    );
+                  },
+                  child: Text('Go')),
+            ],
+          )
         ]),
       ),
     );

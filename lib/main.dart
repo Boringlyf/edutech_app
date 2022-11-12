@@ -1,8 +1,11 @@
+import 'package:app/providers/users_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'widgets/splash_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => UsersProvider(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

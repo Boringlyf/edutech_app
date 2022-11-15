@@ -11,26 +11,28 @@ class _MenuDrawerState extends State<MenuDrawer> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-      child: InkWell(
-        onTap: () {
-          print('menu open');
-        },
+        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
         child: Container(
-          width: 50,
-          height: 50,
-          decoration: new BoxDecoration(
-              color: Colors.red[400],
-              borderRadius: new BorderRadius.only(
-                  topLeft: const Radius.circular(40.0),
-                  topRight: const Radius.circular(40.0),
-                  bottomLeft: const Radius.circular(40.0),
-                  bottomRight: Radius.circular(40.0))),
-          child: Center(
-            child: Icon(Icons.menu),
-          ),
-        ),
-      ),
-    );
+            width: 50,
+            height: 50,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                color: Colors.red[400]),
+            child: IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              iconSize: 30,
+            )));
   }
 }
+
+
+// Container(
+        //   width: 50,
+        //   height: 50,
+        //   child: Drawer(
+        //     backgroundColor: Colors.red[400],
+        //   ),
+        // )

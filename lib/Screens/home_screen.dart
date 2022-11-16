@@ -1,6 +1,9 @@
+import 'package:app/providers/users_provider.dart';
+import 'package:app/widgets/drawer_content.dart';
 import 'package:app/widgets/googlemapwidget.dart';
 // import 'package:app/widgets/menu_drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -16,21 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _globalKey,
-      drawer: Drawer(
-        child: Column(
-          children: [
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-            ),
-            ListTile(
-              title: Text('Name'),
-              leading: Icon(Icons.abc),
-            )
-          ],
-        ),
-      ),
+      drawer: Drawer(child: DrawerContent()),
       body: Stack(children: [
         GoogleMapWidget(),
         Padding(

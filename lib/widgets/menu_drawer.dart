@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class MenuDrawer extends StatefulWidget {
-  MenuDrawer({Key? key}) : super(key: key);
+  Function openMenu;
+
+  MenuDrawer({Key? key, required this.openMenu}) : super(key: key);
 
   @override
   State<MenuDrawer> createState() => _MenuDrawerState();
@@ -13,18 +15,18 @@ class _MenuDrawerState extends State<MenuDrawer> {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
         child: Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                color: Colors.red[400]),
-            child: IconButton(
-              icon: Icon(Icons.menu),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              iconSize: 30,
-            )));
+          width: 50,
+          height: 50,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30), color: Colors.red[400]),
+          child: IconButton(
+            icon: Icon(
+              Icons.menu,
+              size: 30,
+            ),
+            onPressed: widget.openMenu(),
+          ),
+        ));
   }
 }
 

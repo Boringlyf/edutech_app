@@ -1,11 +1,11 @@
-import 'package:app/providers/users_provider.dart';
+import 'package:app/Controllers/users_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'widgets/splash_screen.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-      create: (context) => UsersProvider(), child: MyApp()));
+      create: (context) => UsersProvider(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

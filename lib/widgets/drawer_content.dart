@@ -1,4 +1,6 @@
+import 'package:app/Controllers/users_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../Screens/rides_history_screen.dart';
 import '../Screens/wallet_screen.dart';
@@ -26,7 +28,7 @@ class DrawerContent extends StatelessWidget {
                       color: Colors.grey[300],
                       borderRadius: BorderRadius.circular(50)),
                   child: Icon(
-                    Icons.person,
+                    Icons.person_outline,
                     size: 80,
                   ),
                 ),
@@ -37,13 +39,14 @@ class DrawerContent extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Saad Sheikh',
+                        context.watch<UsersProvider>().users[0].name,
                         style: TextStyle(fontSize: 25),
                       ),
-                      Text('email@gmail.com'),
+                      Text(context.watch<UsersProvider>().users[0].email),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: Text('0324-3455532'),
+                        child:
+                            Text(context.watch<UsersProvider>().users[0].phone),
                       )
                     ],
                   ),
@@ -70,6 +73,16 @@ class DrawerContent extends StatelessWidget {
           child: ListTile(
             title: Text('Rides'),
             leading: Icon(Icons.directions_car),
+          ),
+        ),
+        InkWell(
+          onTap: () {
+            // Navigator.of(context)
+            //     .push(MaterialPageRoute(builder: (context) => WalletScreen()));
+          },
+          child: ListTile(
+            title: Text('Settings'),
+            leading: Icon(Icons.settings),
           ),
         ),
       ],

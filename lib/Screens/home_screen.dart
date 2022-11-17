@@ -1,9 +1,9 @@
-import 'package:app/providers/users_provider.dart';
+import 'package:app/Controllers/users_provider.dart';
+import 'package:app/widgets/bottom_navigate_bar.dart';
 import 'package:app/widgets/drawer_content.dart';
 import 'package:app/widgets/googlemapwidget.dart';
 // import 'package:app/widgets/menu_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -39,7 +39,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   _globalKey.currentState!.openDrawer();
                 },
               ),
-            ))
+            )),
+        BottomNavigateBar()
       ]),
     );
   }

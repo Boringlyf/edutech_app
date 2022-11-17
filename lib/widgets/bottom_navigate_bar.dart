@@ -13,14 +13,49 @@ class BottomNavigateBar extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.person,
-                    size: 30,
-                  )),
+              GestureDetector(
+                onTap: () {
+                  print('User chose to be a driver');
+                },
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Image.asset(
+                      'assets/passenger_icon.png',
+                      width: 20,
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 6),
+                      child: Text('Passenger'),
+                    )
+                  ],
+                ),
+              ),
               SizedBox(width: 100),
-              IconButton(onPressed: () {}, icon: Icon(Icons.home))
+              GestureDetector(
+                onTap: () {
+                  print('User chose to be a driver');
+                },
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Image.asset(
+                      'assets/driver_icon.png',
+                      width: 20,
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 6),
+                      child: Text('Driver'),
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         ));

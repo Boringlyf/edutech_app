@@ -9,7 +9,14 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: [const Logo(), SignUpBlock()],
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Logo(),
+          SizedBox(
+            height: 20,
+          ),
+          SignUpBlock()
+        ],
       ),
     );
   }

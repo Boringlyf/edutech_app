@@ -19,11 +19,25 @@ class SignUpBlock extends StatelessWidget {
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
           ),
-          StringInputField(label: 'Name'),
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Name',
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+            ),
+          ),
           SizedBox(
             height: 20,
           ),
-          StringInputField(label: 'Email'),
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Email',
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+            ),
+          ),
           SizedBox(
             height: 20,
           ),
@@ -31,6 +45,7 @@ class SignUpBlock extends StatelessWidget {
             decoration: InputDecoration(
               labelText: 'Phone Number',
               border: OutlineInputBorder(
+                borderSide: BorderSide(width: 2.0, color: Colors.black),
                 borderRadius: BorderRadius.circular(15),
               ),
             ),

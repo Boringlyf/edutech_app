@@ -1,3 +1,6 @@
+import 'package:app/widgets/driver_bottom_sheet.dart';
+import 'package:app/widgets/passenger_bottom_sheet.dart';
+import 'package:app/widgets/stringinputfield.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigateBar extends StatelessWidget {
@@ -9,18 +12,16 @@ class BottomNavigateBar extends StatelessWidget {
         alignment: FractionalOffset.bottomCenter,
         child: Container(
           height: 60,
-          color: Colors.red[400],
+          decoration: BoxDecoration(
+              color: Colors.red[400],
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30), topRight: Radius.circular(30))),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.person,
-                    size: 30,
-                  )),
+              PassengerBottomSheet(),
               SizedBox(width: 100),
-              IconButton(onPressed: () {}, icon: Icon(Icons.home))
+              DriverBottomSheet()
             ],
           ),
         ));

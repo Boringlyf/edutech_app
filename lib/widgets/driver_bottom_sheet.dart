@@ -1,4 +1,7 @@
+import 'package:app/widgets/number_selector.dart';
 import 'package:flutter/material.dart';
+
+import 'current_location.dart';
 
 class DriverBottomSheet extends StatelessWidget {
   const DriverBottomSheet({Key? key}) : super(key: key);
@@ -24,14 +27,7 @@ class DriverBottomSheet extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      TextFormField(
-                        decoration: InputDecoration(
-                          labelText: 'Current Location',
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
-                      ),
+                      CurrentLocation(),
                       const SizedBox(
                         height: 10,
                       ),
@@ -42,6 +38,46 @@ class DriverBottomSheet extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15),
                           ),
                         ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Plate Number : ',
+                            style: TextStyle(fontSize: 15),
+                          ),
+                          SizedBox(
+                            width: 50,
+                          ),
+                          SizedBox(
+                            width: 200,
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(height: 30),
+                      Row(
+                        children: [
+                          const Text(
+                            'space for people in car: ',
+                            style: TextStyle(fontSize: 15),
+                          ),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          NumberSelector()
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 50,
                       ),
                       ElevatedButton(
                         onPressed: () {},

@@ -1,3 +1,5 @@
+import 'package:app/widgets/current_location.dart';
+import 'package:app/widgets/number_selector.dart';
 import 'package:flutter/material.dart';
 
 class PassengerBottomSheet extends StatelessWidget {
@@ -23,14 +25,7 @@ class PassengerBottomSheet extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      TextFormField(
-                        decoration: InputDecoration(
-                          labelText: 'Current Location',
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
-                      ),
+                      CurrentLocation(),
                       const SizedBox(
                         height: 10,
                       ),
@@ -41,6 +36,21 @@ class PassengerBottomSheet extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15),
                           ),
                         ),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Row(
+                        children: [
+                          const Text('Number of people : '),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          NumberSelector()
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 50,
                       ),
                       ElevatedButton(
                         onPressed: () {},

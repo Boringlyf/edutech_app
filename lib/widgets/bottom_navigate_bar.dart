@@ -15,7 +15,7 @@ class BottomNavigateBar extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  print('User chose to be a driver');
+                  print('User chose to be a passenger');
                 },
                 child: Column(
                   children: [

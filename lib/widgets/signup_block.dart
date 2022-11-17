@@ -41,6 +41,17 @@ class SignUpBlock extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'CNIC',
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
           IntlPhoneField(
             decoration: InputDecoration(
               labelText: 'Phone Number',

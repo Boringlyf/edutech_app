@@ -71,6 +71,9 @@ flutter:
     - assets/dollar-symbol.png
     - assets/placeholder.png
     - assets/user.png
+    - assets/location_1.png
+    - assets/location.png
+    - assets/minus.png
     - assets/profile_pictures/
   #   - images/a_dot_ham.jpeg
 

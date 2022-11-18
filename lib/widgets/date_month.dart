@@ -17,11 +17,28 @@ class DateMonth extends StatelessWidget {
           height: 60.0,
           child: Container(
             decoration: const BoxDecoration(
-              color: Color(0xFFD9D9D9),
+              color: Colors.white,
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.all(
                 Radius.circular(8.0),
               ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey,
+                  offset: Offset(
+                    2.5,
+                    2.5,
+                  ),
+                  blurRadius: 5.0,
+                  spreadRadius: 1.0,
+                ), //BoxShadow
+                BoxShadow(
+                  color: Colors.white,
+                  offset: Offset(0.0, 0.0),
+                  blurRadius: 0.0,
+                  spreadRadius: 0.0,
+                ),
+              ],
             ),
             alignment: Alignment.center,
             child: const Text(

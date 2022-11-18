@@ -15,10 +15,10 @@ class RideHistoryCard extends StatelessWidget {
             (MediaQuery.of(context).size.height * 0.70),
         child: Container(
           decoration: BoxDecoration(
-            color: const Color(0xFFFEF2F2),
+            color: Colors.white,
             borderRadius: BorderRadius.all(
               Radius.circular(MediaQuery.of(context).size.width -
-                  (MediaQuery.of(context).size.width * 0.95)),
+                  (MediaQuery.of(context).size.width * 0.98)),
             ),
             shape: BoxShape.rectangle,
             boxShadow: const [
@@ -45,10 +45,10 @@ class RideHistoryCard extends StatelessWidget {
                 children: [
                   Expanded(
                     flex: 1,
-                    child: Image.asset(
-                      'assets/user.png',
-                      height: 40,
-                      width: 50,
+                    child: CircleAvatar(
+                      maxRadius: 25,
+                      backgroundImage:
+                          AssetImage('assets/profile_pictures/profile_pic.png'),
                     ),
                   ),
                   Expanded(
@@ -152,13 +152,13 @@ class RideHistoryCard extends StatelessWidget {
                       'PICKUP',
                       style: TextStyle(
                         color: Colors.grey,
-                        fontSize: 16,
+                        fontSize: 12,
                       ),
                     ),
                     Row(
                       children: [
                         Image.asset(
-                          'assets/placeholder.png',
+                          'assets/location.png',
                           height: 20,
                           width: 20,
                         ),
@@ -170,7 +170,7 @@ class RideHistoryCard extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
-                            color: Colors.green[800],
+                            color: Colors.black,
                           ),
                         ),
                       ],
@@ -195,13 +195,13 @@ class RideHistoryCard extends StatelessWidget {
                       'DROP OFF',
                       style: TextStyle(
                         color: Colors.grey,
-                        fontSize: 16,
+                        fontSize: 12,
                       ),
                     ),
                     Row(
                       children: [
                         Image.asset(
-                          'assets/placeholder.png',
+                          'assets/location_1.png',
                           height: 20,
                           width: 20,
                         ),
@@ -213,7 +213,7 @@ class RideHistoryCard extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
-                            color: Colors.red[800],
+                            color: Colors.black,
                           ),
                         ),
                       ],

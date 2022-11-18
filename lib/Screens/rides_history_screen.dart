@@ -10,6 +10,7 @@ class RidesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: const Text('Rides Screen'),
         backgroundColor: Colors.red[400],

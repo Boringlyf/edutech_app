@@ -7,9 +7,11 @@ class UserModel {
   final String phone;
   final String cnic;
 
+
   UserModel(
       {required this.name,
       required this.cnic,
       required this.email,
       required this.phone});
+
 }

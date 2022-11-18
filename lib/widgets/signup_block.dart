@@ -9,7 +9,10 @@ class SignUpBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20,
+        vertical: 20,
+      ),
       child: Container(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Padding(

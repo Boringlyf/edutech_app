@@ -71,6 +71,7 @@ flutter:
     - assets/dollar-symbol.png
     - assets/placeholder.png
     - assets/user.png
+    - assets/profile_pictures/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,11 +1,25 @@
+import 'package:app/Controllers/drivers_provider.dart';
+import 'package:app/Controllers/passengers_provider.dart';
 import 'package:app/Controllers/users_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import 'widgets/splash_screen.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-      create: (context) => UsersProvider(), child: const MyApp()));
+
+  runApp(
+    // You can wrap multiple providers
+    MultiProvider(
+      providers: [
+
+        ChangeNotifierProvider(create: (_) => DriversProvider()),
+        ChangeNotifierProvider(create: (_) => PassengersProvider()),
+        ChangeNotifierProvider(create: (context) => UsersProvider()),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -26,7 +40,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: const SplashScreen(),
     );

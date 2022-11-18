@@ -1,3 +1,4 @@
+import 'package:app/Screens/passengers_screen.dart';
 import 'package:app/widgets/current_location.dart';
 import 'package:app/widgets/number_selector.dart';
 import 'package:flutter/material.dart';
@@ -53,7 +54,11 @@ class PassengerBottomSheet extends StatelessWidget {
                         height: 50,
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => PassengersScreen()),
+                          );
+                        },
                         child: Text('Find'),
                         style: ButtonStyle(
                             backgroundColor:

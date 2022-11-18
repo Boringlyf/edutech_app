@@ -1,3 +1,4 @@
+import 'package:app/Screens/drivers.dart';
 import 'package:app/widgets/number_selector.dart';
 import 'package:flutter/material.dart';
 
@@ -80,7 +81,10 @@ class DriverBottomSheet extends StatelessWidget {
                         height: 50,
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => DriversScreen()),
+                          );},
                         child: Text('Find'),
                         style: ButtonStyle(
                             backgroundColor:

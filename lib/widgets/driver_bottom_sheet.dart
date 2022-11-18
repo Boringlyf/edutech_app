@@ -83,9 +83,11 @@ class DriverBottomSheet extends StatelessWidget {
                       ElevatedButton(
                         onPressed: () {
                           Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) => DriversScreen()),
-                          );},
-                        child: Text('Find'),
+                            MaterialPageRoute(
+                                builder: (context) => DriversScreen()),
+                          );
+                        },
+                        child: Text('Start'),
                         style: ButtonStyle(
                             backgroundColor:
                                 MaterialStateProperty.all(Colors.red[400])),

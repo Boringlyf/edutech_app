@@ -8,15 +8,20 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Logo(),
-          SizedBox(
-            height: 20,
+      body: SizedBox(
+        height: MediaQuery.of(context).size.height,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Logo(),
+              SizedBox(
+                height: 20,
+              ),
+              SignUpBlock()
+            ],
           ),
-          SignUpBlock()
-        ],
+        ),
       ),
     );
   }

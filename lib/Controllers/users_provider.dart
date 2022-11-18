@@ -4,7 +4,10 @@ import 'package:flutter/foundation.dart';
 class UsersProvider with ChangeNotifier {
   final List<UserModel> _users = [
     UserModel(
-        name: 'Saad Sheikh', email: 'email@gmail.com', phone: '0324-3455032')
+        name: 'Saad Sheikh',
+        cnic: '12231-287032-3',
+        email: 'email@gmail.com',
+        phone: '0324-3455032')
   ];
 
   List<UserModel> get users {

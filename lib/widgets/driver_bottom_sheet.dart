@@ -2,6 +2,7 @@ import 'package:app/Screens/drivers.dart';
 import 'package:app/widgets/number_selector.dart';
 import 'package:flutter/material.dart';
 
+import '../Screens/passengers_screen.dart';
 import 'current_location.dart';
 
 class DriverBottomSheet extends StatelessWidget {
@@ -84,7 +85,7 @@ class DriverBottomSheet extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                                builder: (context) => DriversScreen()),
+                                builder: (context) => PassengersScreen()),
                           );
                         },
                         child: Text('Start'),

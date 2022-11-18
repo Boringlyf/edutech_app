@@ -1,3 +1,4 @@
+import 'package:app/Screens/drivers.dart';
 import 'package:app/Screens/passengers_screen.dart';
 import 'package:app/widgets/current_location.dart';
 import 'package:app/widgets/number_selector.dart';
@@ -56,10 +57,11 @@ class PassengerBottomSheet extends StatelessWidget {
                       ElevatedButton(
                         onPressed: () {
                           Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) => PassengersScreen()),
+                            MaterialPageRoute(
+                                builder: (context) => DriversScreen()),
                           );
                         },
-                        child: Text('Find'),
+                        child: Text('Find Driver'),
                         style: ButtonStyle(
                             backgroundColor:
                                 MaterialStateProperty.all(Colors.red[400])),
